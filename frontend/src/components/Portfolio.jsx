@@ -91,9 +91,9 @@ export default function Portfolio({ setActiveTab }) {
     { id: 21, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-tapx0rnr6v.webp', category: 'Bride', title: 'Grace', mediaType: 'image' },
 
     // --- HALDI ---
-    { id: 22, src: '', category: 'Haldi', title: 'Vibrant Colors', mediaType: 'image' },
+    { id: 22, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/vicky-photography-studio-nandauli-ayodhya-photographers-0sha98mzy5.webp', category: 'Haldi', title: 'Vibrant Colors', mediaType: 'image' },
     { id: 23, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-tapx0rnr6v.webp', category: 'Haldi', title: 'Joy & Turmeric', mediaType: 'image' },
-    { id: 24, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/vicky-photography-studio-nandauli-ayodhya-photographers-0sha98mzy5.webp', category: 'Haldi', title: 'Traditions', mediaType: 'image' },
+    { id: 24, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/vicky-photography-studio-nandauli-ayodhya-photographers-s4cgc41i1p.webp', category: 'Haldi', title: 'Traditions', mediaType: 'image' },
     { id: 25, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/vicky-photography-studio-nandauli-ayodhya-photographers-pi05l6yawf.avif', category: 'Haldi', title: 'Laughter', mediaType: 'image' },
 
     // --- MATERNITY ---
@@ -106,10 +106,10 @@ export default function Portfolio({ setActiveTab }) {
     { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/2a740265aae2f4859535803c5cb940ff.jpg', category: 'Maternity', title: 'Anticipation', mediaType: 'image' },
 
     // --- BIRTHDAY ---
-    { id: 30, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141090/c7428bf97027ba81c5c4051fbc73ed2c.jpg', category: 'Birthday', title: 'Golden Celebrations', mediaType: 'image' },
+    { id: 30, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141078/406decb9c0722b3f16efee4365339f9f.jpg', category: 'Birthday', title: 'Golden Celebrations', mediaType: 'image' },
     { id: 31, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141080/f7785749f68b4e46d41468056a23f973.jpg', category: 'Birthday', title: 'Smiles', mediaType: 'image' },
-    { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141080/f7785749f68b4e46d41468056a23f973.jpg', category: 'Birthday', title: 'Festivities', mediaType: 'image' },
-    { id: 33, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/e0ec47c1baa0912eedf990656c0c4b63.jpg', category: 'Birthday', title: 'Memories', mediaType: 'image' },
+    { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141078/375f9eed27c4b9015da7a1252a8a72c4.jpg', category: 'Birthday', title: 'Festivities', mediaType: 'image' },
+    { id: 33, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141079/a45194d0297e7632819da09e30b37601.jpg', category: 'Birthday', title: 'Memories', mediaType: 'image' },
   ];
 
   const filteredImages = activeFilter === 'All' 
