@@ -5,7 +5,7 @@ export default function Hero({ setActiveTab }) {
   // =========================================
   // 1. DATA & STATE
   // =========================================
-  const backgroundVideoUrl = "https://res.cloudinary.com/doa6d6cyf/video/upload/a_270/v1787917023/Captured_emotions_not_just_moments_Book_your_wedding_now_zchs8l.mp4";
+  const backgroundVideoUrl = "https://res.cloudinary.com/tkhv6b6p/video/upload/v1791279602/1006.mp4";
   
   const partners = [
     "VOGUE WEDDINGS", "WEDMEGOOD", "SHAADISAGA", "HARPER'S BAZAAR", 
