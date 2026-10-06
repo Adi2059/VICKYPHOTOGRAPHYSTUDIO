@@ -34,7 +34,7 @@ export default function Portfolio({ setActiveTab }) {
       couple: "Meera & Kabir",
       year: "2026",
       context: "Shot against architectural marvels at golden hour. We approached this sequence like a high-fashion editorial, blending natural lighting with profound romance.",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4", 
+      src: "https://res.cloudinary.com/tkhv6b6p/video/upload/v1791285157/1006_1.mp4", 
       thumbnail: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-92bh153zha.avif",
       mediaType: 'video'
     },
