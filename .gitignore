@@ -1,0 +1,49 @@
+# ==========================================
+# 🛑 ROOT LEVEL DEPENDENCIES & SECRETS
+# ==========================================
+node_modules/
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# 🖥️ FRONTEND (React / Vite / Next.js)
+# ==========================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.vite/
+
+# ==========================================
+# ⚙️ BACKEND (Node.js / Express)
+# ==========================================
+backend/node_modules/
+backend/.env
+backend/.env.local
+backend/.env.production
+backend/uploads/
+
+# ==========================================
+# 📝 LOGS & DEBUGGING
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# 💻 OS & IDE ARTIFACTS
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
