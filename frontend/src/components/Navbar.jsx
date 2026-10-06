@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Lock } from 'lucide-react'; // Ensure lucide-react is installed
 
-export default function Navbar({ activeTab, setActiveTab }) {
+// 🚀 ADDED 'openLoginModal' as a prop here
+export default function Navbar({ activeTab, setActiveTab, openLoginModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -78,11 +79,11 @@ export default function Navbar({ activeTab, setActiveTab }) {
               ))}
             </div>
 
-            {/* 🚀 ADDED: The Secret Client Vault Login (Desktop) */}
+            {/* 🚀 FIXED: The Secret Client Vault Login (Desktop) */}
             <div className="flex items-center ml-8 pl-8 border-l border-white/20">
               <button 
-                onClick={() => window.location.href = '/client-login'} // Change this to your actual login route
-                className="flex items-center gap-2 font-luxury-sans text-[10px] tracking-[0.2em] uppercase text-white hover:text-[#C5A059] transition-all duration-300 group"
+                onClick={openLoginModal} 
+                className="flex items-center gap-2 font-luxury-sans text-[10px] tracking-[0.2em] uppercase text-white hover:text-[#C5A059] transition-all duration-300 group cursor-pointer"
               >
                 <Lock size={12} className="text-gray-400 group-hover:text-[#C5A059] transition-colors" />
                 <span>Client Vault</span>
@@ -116,6 +117,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
         <div className="relative z-10 flex flex-col items-center gap-8">
           <span className="text-gray-500 font-brutalist font-bold tracking-widest uppercase mb-4">Menu</span>
           
+          {/* 🚀 FIXED: Restored original menu items loop */}
           {menuItems.map((item) => (
             <button
               key={item.id}
@@ -131,13 +133,13 @@ export default function Navbar({ activeTab, setActiveTab }) {
           {/* Divider */}
           <div className="w-12 h-[1px] bg-white/20 my-6" />
 
-          {/* 🚀 ADDED: The Secret Client Vault Login (Mobile Menu) */}
+          {/* 🚀 FIXED: The Secret Client Vault Login (Mobile Menu) */}
           <button 
             onClick={() => {
               setIsMenuOpen(false);
-              window.location.href = '/client-login'; // Change this to your actual login route
+              if (openLoginModal) openLoginModal();
             }}
-            className="flex items-center gap-3 border border-white/20 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-full text-white transition-all"
+            className="flex items-center gap-3 border border-white/20 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-full text-white transition-all cursor-pointer"
           >
             <Lock size={14} className="text-[#C5A059]" />
             <span className="font-brutalist text-xs tracking-widest uppercase font-bold">Access Client Vault</span>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function Footer() {
+// 🚀 ADDED prop: 'openLoginModal' so it can trigger the login popup from App.jsx
+export default function Footer({ openLoginModal }) {
   const canvasRef = useRef(null);
   const footerRef = useRef(null);
   const points = useRef([]);
@@ -127,17 +128,18 @@ export default function Footer() {
         {/* 🚀 LEFT: Secret Admin & Crew Portals + Copyright */}
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start gap-2">
           
-          <div className="flex items-center gap-3 opacity-30 hover:opacity-100 transition-opacity duration-500">
+          <div className="flex items-center gap-3 opacity-30 hover:opacity-100 transition-opacity duration-500 relative z-20">
+            {/* 🚀 FIXED: Swapped window.location with openLoginModal function call */}
             <button 
-              onClick={() => window.location.href = '/admin-login'} 
-              className="hover:text-[#C5A059] transition-colors"
+              onClick={() => openLoginModal && openLoginModal()} 
+              className="hover:text-[#C5A059] transition-colors cursor-pointer"
             >
               System Admin
             </button>
             <span>•</span>
             <button 
-              onClick={() => window.location.href = '/crew-login'} 
-              className="hover:text-[#C5A059] transition-colors"
+              onClick={() => openLoginModal && openLoginModal()} 
+              className="hover:text-[#C5A059] transition-colors cursor-pointer"
             >
               Crew Console
             </button>
@@ -147,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* CENTER: Clean Social Links */}
-        <div className="w-full md:w-1/3 flex justify-center gap-8">
+        <div className="w-full md:w-1/3 flex justify-center gap-8 relative z-20">
           <a 
             href="https://www.instagram.com/vickyphotographystudio/" 
             target="_blank" 
@@ -165,10 +167,10 @@ export default function Footer() {
         </div>
 
         {/* RIGHT: Agency Tag (AUG) */}
-        <div className="w-full md:w-1/3 flex justify-center md:justify-end items-center gap-2">
+        <div className="w-full md:w-1/3 flex justify-center md:justify-end items-center gap-2 relative z-20">
           <span>Infrastructure by</span>
           <span className="w-1.5 h-1.5 bg-[#C5A059] inline-block"></span>
-          <a href="#" className="hover:text-white transition-colors font-bold text-gray-300">
+          <a href="#" className="hover:text-white transition-colors font-bold text-gray-300 cursor-pointer">
             AUG CONSULTANCY
           </a>
         </div>
