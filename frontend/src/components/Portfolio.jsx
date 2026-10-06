@@ -64,47 +64,50 @@ export default function Portfolio({ setActiveTab }) {
   const portfolioImages = [
     // --- WEDDINGS ---
     { id: 1, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141095/c48b94bec54d8b351d042370caddc76c.jpg', category: 'Weddings', title: 'The Royal Vows', mediaType: 'image' },
-    { id: 2, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141094/bc30c845e63b5a82a5182a9da8b3c6c5.jpg', category: 'Weddings', title: 'Sacred Rituals', mediaType: 'image' },
+    { id: 2, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tlegmdgf9o.webp', category: 'Weddings', title: 'Sacred Rituals', mediaType: 'image' },
     { id: 3, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/7b0c2b5cb89d0d6a1c244569f453f66c.jpg', category: 'Weddings', title: 'Timeless Bond', mediaType: 'image' },
     { id: 4, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-x5carlaggi.webp', category: 'Weddings', title: 'Grandeur', mediaType: 'image' },
     { id: 5, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tqyhg29mva.avif', category: 'Weddings', title: 'The Celebration', mediaType: 'image' },
     { id: 6, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-d2gfw3ovz1.avif', category: 'Weddings', title: 'Union', mediaType: 'image' },
     { id: 7, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-b04qpvocrf.webp', category: 'Weddings', title: 'Promises', mediaType: 'image' },
-    { id: 8, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-rx9tzh0jtw.avif', category: 'Weddings', title: 'Forever', mediaType: 'image' },
+    { id: 8, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-np7yrd4v3m.webp', category: 'Weddings', title: 'Forever', mediaType: 'image' },
 
     // --- PRE-WEDDINGS ---
     { id: 9, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-b04qpvocrf.webp', category: 'Pre-Weddings', title: 'Golden Hour', mediaType: 'image' },
-    { id: 10, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg', category: 'Pre-Weddings', title: 'Editorial Frame', mediaType: 'image' },
-    { id: 11, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/799f7bd60c9f4a3ce36ed2a5c1bb8ae6.jpg', category: 'Pre-Weddings', title: 'Timeless Romance', mediaType: 'image' },
-    { id: 12, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/9e91eb85f896212dccaf39f0682c985c.jpg', category: 'Pre-Weddings', title: 'Serenity', mediaType: 'image' },
-    { id: 13, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-n1jnri4r1n.avif', category: 'Pre-Weddings', title: 'Love Story', mediaType: 'image' },
+    { id: 10, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/4c3a04b623f131eac5f8ea4f389468a2.jpg', category: 'Pre-Weddings', title: 'Editorial Frame', mediaType: 'image' },
+    { id: 11, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg', category: 'Pre-Weddings', title: 'Timeless Romance', mediaType: 'image' },
+    { id: 12, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/799f7bd60c9f4a3ce36ed2a5c1bb8ae6.jpg', category: 'Pre-Weddings', title: 'Serenity', mediaType: 'image' },
+    { id: 13, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/9e91eb85f896212dccaf39f0682c985c.jpg', category: 'Pre-Weddings', title: 'Love Story', mediaType: 'image' },
     { id: 14, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/vicky-photography-studio-nandauli-ayodhya-photographers-pi05l6yawf.avif', category: 'Pre-Weddings', title: 'The Proposal', mediaType: 'image' },
     { id: 15, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-7g7nyq5tvx.webp', category: 'Pre-Weddings', title: 'Dreamy', mediaType: 'image' },
     { id: 16, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/vicky-photography-studio-nandauli-ayodhya-photographers-0sha98mzy5.webp', category: 'Pre-Weddings', title: 'Classic', mediaType: 'image' },
 
     // --- BRIDE ---
-    { id: 17, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141095/28.jpg', category: 'Bride', title: 'The Bridal Aura', mediaType: 'image' },
-    { id: 18, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/4c3a04b623f131eac5f8ea4f389468a2.jpg', category: 'Bride', title: 'Elegance', mediaType: 'image' },
-    { id: 19, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/2a740265aae2f4859535803c5cb940ff.jpg', category: 'Bride', title: 'Regal Charm', mediaType: 'image' },
-    { id: 20, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tlegmdgf9o.webp', category: 'Bride', title: 'Beauty', mediaType: 'image' },
+    { id: 17, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-rx9tzh0jtw.avif', category: 'Bride', title: 'The Bridal Aura', mediaType: 'image' },
+    { id: 18, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-rx9tzh0jtw.avif', category: 'Bride', title: 'Elegance', mediaType: 'image' },
+    { id: 19, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-7g7nyq5tvx.webp', category: 'Bride', title: 'Regal Charm', mediaType: 'image' },
+    { id: 20, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-n1jnri4r1n.avif', category: 'Bride', title: 'Beauty', mediaType: 'image' },
     { id: 21, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-tapx0rnr6v.webp', category: 'Bride', title: 'Grace', mediaType: 'image' },
 
     // --- HALDI ---
-    { id: 22, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/d21067d59901e1c5f2a98922ed108387.jpg', category: 'Haldi', title: 'Vibrant Colors', mediaType: 'image' },
-    { id: 23, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/879e1abd50915071c6687c2add14d5d6.jpg', category: 'Haldi', title: 'Joy & Turmeric', mediaType: 'image' },
-    { id: 24, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-hz09pymfpk.webp', category: 'Haldi', title: 'Traditions', mediaType: 'image' },
-    { id: 25, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141078/406decb9c0722b3f16efee4365339f9f.jpg', category: 'Haldi', title: 'Laughter', mediaType: 'image' },
+    { id: 22, src: '', category: 'Haldi', title: 'Vibrant Colors', mediaType: 'image' },
+    { id: 23, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/vicky-photography-studio-nandauli-ayodhya-photographers-tapx0rnr6v.webp', category: 'Haldi', title: 'Joy & Turmeric', mediaType: 'image' },
+    { id: 24, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/vicky-photography-studio-nandauli-ayodhya-photographers-0sha98mzy5.webp', category: 'Haldi', title: 'Traditions', mediaType: 'image' },
+    { id: 25, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/vicky-photography-studio-nandauli-ayodhya-photographers-pi05l6yawf.avif', category: 'Haldi', title: 'Laughter', mediaType: 'image' },
 
     // --- MATERNITY ---
-    { id: 26, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141079/a45194d0297e7632819da09e30b37601.jpg', category: 'Maternity', title: 'Motherhood Grace', mediaType: 'image' },
-    { id: 27, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141073/99fd5f2c363ffea74fc07ae334e64647.jpg', category: 'Maternity', title: 'New Beginnings', mediaType: 'image' },
-    { id: 28, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141073/337cceec1aad6c598dd144505da5c584.jpg', category: 'Maternity', title: 'Blessed', mediaType: 'image' },
+    { id: 26, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg', category: 'Maternity', title: 'Motherhood Grace', mediaType: 'image' },
+    { id: 27, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/e0ec47c1baa0912eedf990656c0c4b63.jpg', category: 'Maternity', title: 'New Beginnings', mediaType: 'image' },
+    { id: 28, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/879e1abd50915071c6687c2add14d5d6.jpg', category: 'Maternity', title: 'Blessed', mediaType: 'image' },
     { id: 29, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/ec0b37777f678d6704b0c9a9c2788991.jpg', category: 'Maternity', title: 'Anticipation', mediaType: 'image' },
+    { id: 30, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/d21067d59901e1c5f2a98922ed108387.jpg', category: 'Maternity', title: 'Anticipation', mediaType: 'image' },
+    { id: 31, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/e0ec47c1baa0912eedf990656c0c4b63.jpg', category: 'Maternity', title: 'Anticipation', mediaType: 'image' },
+    { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/2a740265aae2f4859535803c5cb940ff.jpg', category: 'Maternity', title: 'Anticipation', mediaType: 'image' },
 
     // --- BIRTHDAY ---
     { id: 30, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141090/c7428bf97027ba81c5c4051fbc73ed2c.jpg', category: 'Birthday', title: 'Golden Celebrations', mediaType: 'image' },
     { id: 31, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141080/f7785749f68b4e46d41468056a23f973.jpg', category: 'Birthday', title: 'Smiles', mediaType: 'image' },
-    { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-np7yrd4v3m.webp', category: 'Birthday', title: 'Festivities', mediaType: 'image' },
+    { id: 32, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141080/f7785749f68b4e46d41468056a23f973.jpg', category: 'Birthday', title: 'Festivities', mediaType: 'image' },
     { id: 33, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140825/e0ec47c1baa0912eedf990656c0c4b63.jpg', category: 'Birthday', title: 'Memories', mediaType: 'image' },
   ];
 
