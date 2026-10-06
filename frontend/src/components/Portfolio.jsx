@@ -63,17 +63,18 @@ export default function Portfolio({ setActiveTab }) {
   // 🚀 SAARI PHOTOS YAHAAN HAIN! (Change 'category' if any photo is misplaced visually)
   const portfolioImages = [
     // --- WEDDINGS ---
-    { id: 1, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141095/c48b94bec54d8b351d042370caddc76c.jpg', category: 'Weddings', title: 'The Royal Vows', mediaType: 'image' },
-    { id: 2, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tlegmdgf9o.webp', category: 'Weddings', title: 'Sacred Rituals', mediaType: 'image' },
-    { id: 3, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/7b0c2b5cb89d0d6a1c244569f453f66c.jpg', category: 'Weddings', title: 'Timeless Bond', mediaType: 'image' },
-    { id: 4, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-x5carlaggi.webp', category: 'Weddings', title: 'Grandeur', mediaType: 'image' },
-    { id: 5, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tqyhg29mva.avif', category: 'Weddings', title: 'The Celebration', mediaType: 'image' },
-    { id: 6, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-d2gfw3ovz1.avif', category: 'Weddings', title: 'Union', mediaType: 'image' },
-    { id: 7, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-b04qpvocrf.webp', category: 'Weddings', title: 'Promises', mediaType: 'image' },
-    { id: 8, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-np7yrd4v3m.webp', category: 'Weddings', title: 'Forever', mediaType: 'image' },
+    { id: 1, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141150/6436dd71a3547c86de82ad5e88150542.jpg', category: 'Weddings', title: 'The Royal Vows', mediaType: 'image' },
+    { id: 2, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141095/c48b94bec54d8b351d042370caddc76c.jpg', category: 'Weddings', title: 'Sacred Rituals', mediaType: 'image' },
+    { id: 3, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141094/bc30c845e63b5a82a5182a9da8b3c6c5.jpg', category: 'Weddings', title: 'Timeless Bond', mediaType: 'image' },
+    { id: 4, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/7b0c2b5cb89d0d6a1c244569f453f66c.jpg', category: 'Weddings', title: 'Grandeur', mediaType: 'image' },
+    { id: 5, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-92bh153zha.avif', category: 'Weddings', title: 'The Celebration', mediaType: 'image' },
+    { id: 6, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-np7yrd4v3m.webp', category: 'Weddings', title: 'Union', mediaType: 'image' },
+    { id: 7, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tlegmdgf9o.webp', category: 'Weddings', title: 'Promises', mediaType: 'image' },
+    { id: 8, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-x5carlaggi.webp', category: 'Weddings', title: 'Forever', mediaType: 'image' },
+    { id: 9, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-d2gfw3ovz1.avif', category: 'Weddings', title: 'Forever', mediaType: 'image' },
 
     // --- PRE-WEDDINGS ---
-    { id: 9, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141093/vicky-photography-studio-nandauli-ayodhya-photographers-b04qpvocrf.webp', category: 'Pre-Weddings', title: 'Golden Hour', mediaType: 'image' },
+    { id: 9, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/799f7bd60c9f4a3ce36ed2a5c1bb8ae6.jpg', category: 'Pre-Weddings', title: 'Golden Hour', mediaType: 'image' },
     { id: 10, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/4c3a04b623f131eac5f8ea4f389468a2.jpg', category: 'Pre-Weddings', title: 'Editorial Frame', mediaType: 'image' },
     { id: 11, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg', category: 'Pre-Weddings', title: 'Timeless Romance', mediaType: 'image' },
     { id: 12, src: 'https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/799f7bd60c9f4a3ce36ed2a5c1bb8ae6.jpg', category: 'Pre-Weddings', title: 'Serenity', mediaType: 'image' },

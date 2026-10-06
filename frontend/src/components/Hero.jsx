@@ -14,10 +14,10 @@ export default function Hero({ setActiveTab }) {
 
   // 🚀 UPDATED FOLD 3 IMAGES (Reserved Best 4 Photos)
   const fold3Collections = [
-    { id: "I", title: "The Royal Vows", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141150/6436dd71a3547c86de82ad5e88150542.jpg" },
-    { id: "II", title: "Editorial Portraits", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141100/CT1A9130.jpg" },
-    { id: "III", title: "The Haldi", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141090/CT1A9116.jpg" },
-    { id: "IV", title: "Grand Reception", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/bride_4.jpg" }
+    { id: "I", title: "The Royal Vows", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/bride_4.jpg" },
+    { id: "II", title: "Editorial Portraits", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-tlegmdgf9o.webp" },
+    { id: "III", title: "BRIDAL", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141073/337cceec1aad6c598dd144505da5c584.jpg" },
+    { id: "IV", title: "Grand Reception", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-51rzbezibd.webp" }
   ];
 
   // 🚀 CUSTOM QUOTE BUILDER STATE (FOLD 5)
@@ -317,7 +317,7 @@ export default function Hero({ setActiveTab }) {
             
             {/* 🚀 FOLD 4 IMAGES UPDATED HERE */}
             <div ref={card1Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.1s' }}>
-              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141094/bc30c845e63b5a82a5182a9da8b3c6c5.jpg" alt="Weddings" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140828/vicky-photography-studio-nandauli-ayodhya-photographers-np7yrd4v3m.webp" alt="Weddings" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
@@ -328,7 +328,7 @@ export default function Hero({ setActiveTab }) {
             </div>
 
             <div ref={card2Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.2s' }}>
-              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg" alt="Portraits" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141073/337cceec1aad6c598dd144505da5c584.jpg" alt="Portraits" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
@@ -339,7 +339,7 @@ export default function Hero({ setActiveTab }) {
             </div>
 
             <div ref={card3Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.3s' }}>
-              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/d21067d59901e1c5f2a98922ed108387.jpg" alt="Traditions" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141091/799f7bd60c9f4a3ce36ed2a5c1bb8ae6.jpg" alt="Traditions" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
