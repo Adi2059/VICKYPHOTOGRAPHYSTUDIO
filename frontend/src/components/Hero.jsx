@@ -12,11 +12,12 @@ export default function Hero({ setActiveTab }) {
     "THE WEDDING BRIGADE", "FEARLESS PHOTOGRAPHERS", "GQ", "WEDDINGWIRE"
   ];
 
+  // 🚀 UPDATED FOLD 3 IMAGES (Reserved Best 4 Photos)
   const fold3Collections = [
-    { id: "I", title: "The Royal Vows", img: "https://res.cloudinary.com/doa6d6cyf/image/upload/v1784743445/ptaufiq-indian-wedding-rajkot-India-ceremony-couple-portraits_xxvlnv.jpg" },
-    { id: "II", title: "Editorial Portraits", img: "https://res.cloudinary.com/doa6d6cyf/image/upload/v1784020588/Copy_of_uniquephotography1.0-20260318-0002_appvcv_xrbtxq.webp" },
-    { id: "III", title: "The Haldi", img: "https://res.cloudinary.com/doa6d6cyf/image/upload/v1787200591/IMG_5643.JPG_y7fuic.jpg" },
-    { id: "IV", title: "Grand Reception", img: "https://res.cloudinary.com/doa6d6cyf/image/upload/v1787200594/IMG_5697_ulijfv.jpg" }
+    { id: "I", title: "The Royal Vows", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141150/6436dd71a3547c86de82ad5e88150542.jpg" },
+    { id: "II", title: "Editorial Portraits", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141100/CT1A9130.jpg" },
+    { id: "III", title: "The Haldi", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141090/CT1A9116.jpg" },
+    { id: "IV", title: "Grand Reception", img: "https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140826/bride_4.jpg" }
   ];
 
   // 🚀 CUSTOM QUOTE BUILDER STATE (FOLD 5)
@@ -299,7 +300,7 @@ export default function Hero({ setActiveTab }) {
 
       {/* =========================================================
           ✨ FOLD 4: THE SIGNATURE COLLECTIONS (Optimized Spacing)
-      ========================================================= */}
+      ======================================================== */}
       <div ref={fold4Ref} className="relative w-full bg-[#E8E8E8] text-[#1a1a1a] pt-16 pb-16 lg:pt-20 lg:pb-24 px-6 lg:px-16 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-multiply" style={{ backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")' }}></div>
 
@@ -314,8 +315,9 @@ export default function Hero({ setActiveTab }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full mb-12 lg:mb-16">
             
+            {/* 🚀 FOLD 4 IMAGES UPDATED HERE */}
             <div ref={card1Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.1s' }}>
-              <img src="https://res.cloudinary.com/doa6d6cyf/image/upload/v1784743445/ptaufiq-indian-wedding-rajkot-India-ceremony-couple-portraits_xxvlnv.jpg" alt="Weddings" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141094/bc30c845e63b5a82a5182a9da8b3c6c5.jpg" alt="Weddings" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
@@ -326,7 +328,7 @@ export default function Hero({ setActiveTab }) {
             </div>
 
             <div ref={card2Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.2s' }}>
-              <img src="https://res.cloudinary.com/doa6d6cyf/image/upload/v1787200591/IMG_5643.JPG_y7fuic.jpg" alt="Portraits" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791141092/0d96d0ec47f9ae27d6c465d137f47b49.jpg" alt="Portraits" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
@@ -337,7 +339,7 @@ export default function Hero({ setActiveTab }) {
             </div>
 
             <div ref={card3Ref} className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group reveal-on-scroll cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500" style={{ transitionDelay: '0.3s' }}>
-              <img src="https://res.cloudinary.com/doa6d6cyf/image/upload/v1784746879/WhatsApp_Image_2026-07-23_at_12.30.06_AM_w4cexe.jpg" alt="Traditions" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/tkhv6b6p/image/upload/v1791140827/d21067d59901e1c5f2a98922ed108387.jpg" alt="Traditions" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
