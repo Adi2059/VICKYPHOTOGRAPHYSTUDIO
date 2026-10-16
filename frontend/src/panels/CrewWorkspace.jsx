@@ -306,9 +306,13 @@ export default function CrewWorkspace({ onLogout }) {
     document.getElementById('editor-grid')?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleUnlock = (e) => {
+const handleUnlock = (e) => {
     e.preventDefault();
-    if (password === 'Aman@1234') {
+    
+    // .env file se password nikal raha hai, agar nahi mila toh fallback 'Aman@1234' use karega
+    const correctPassword = import.meta.env.VITE_CREW_PASSWORD || 'Studio@1234';
+
+    if (password === correctPassword) {
       setIsUnlocked(true);
       setAuthError('');
     } else {
@@ -316,7 +320,6 @@ export default function CrewWorkspace({ onLogout }) {
       setPassword('');
     }
   };
-
   // 🚀 CLIENT SEARCH & FILTER LOGIC
   const displayedProjects = projects.filter(project => {
     const matchesSearch = (project.name || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
