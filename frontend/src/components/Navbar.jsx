@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Lock } from 'lucide-react'; // Ensure lucide-react is installed
+import { Lock } from 'lucide-react'; 
 
-// 🚀 ADDED 'openLoginModal' as a prop here
-export default function Navbar({ activeTab, setActiveTab, openLoginModal }) {
+export default function Navbar({ activeTab, setActiveTab, openLoginModal, openCrewWorkspace }) { // 🚀 ADDED 'openCrewWorkspace'
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -79,7 +78,7 @@ export default function Navbar({ activeTab, setActiveTab, openLoginModal }) {
               ))}
             </div>
 
-            {/* 🚀 FIXED: The Secret Client Vault Login (Desktop) */}
+            {/* The Secret Client Vault Login (Desktop) */}
             <div className="flex items-center ml-8 pl-8 border-l border-white/20">
               <button 
                 onClick={openLoginModal} 
@@ -117,7 +116,6 @@ export default function Navbar({ activeTab, setActiveTab, openLoginModal }) {
         <div className="relative z-10 flex flex-col items-center gap-8">
           <span className="text-gray-500 font-brutalist font-bold tracking-widest uppercase mb-4">Menu</span>
           
-          {/* 🚀 FIXED: Restored original menu items loop */}
           {menuItems.map((item) => (
             <button
               key={item.id}
@@ -133,7 +131,7 @@ export default function Navbar({ activeTab, setActiveTab, openLoginModal }) {
           {/* Divider */}
           <div className="w-12 h-[1px] bg-white/20 my-6" />
 
-          {/* 🚀 FIXED: The Secret Client Vault Login (Mobile Menu) */}
+          {/* The Secret Client Vault Login (Mobile Menu) */}
           <button 
             onClick={() => {
               setIsMenuOpen(false);

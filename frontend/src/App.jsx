@@ -100,6 +100,12 @@ export default function App() {
     setShowLoginModal(true);
   };
 
+  // 🚀 Naya function jo Crew Console ko direct render karega 
+  const openCrewWorkspace = () => {
+    setShowLoginModal(false); 
+    setCurrentView('crew');
+  };
+
   return (
     <div className="bg-[#0a0a0a] min-h-screen text-white select-none overflow-x-hidden selection:bg-white selection:text-black relative w-full flex flex-col">
 
@@ -175,6 +181,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         openLoginModal={openPortalLogin}
+        openCrewWorkspace={openCrewWorkspace} // 🚀 Naya prop add kiya
       />
 
       {/* 🖼️ FULL-WIDTH VIEWPORT */}
@@ -212,6 +219,7 @@ export default function App() {
         {/* 🌟 MASTER FOOTER */}
         <Footer
           openLoginModal={openPortalLogin}
+          openCrewWorkspace={openCrewWorkspace} // 🚀 Naya prop add kiya
         />
       </div>
 

@@ -241,9 +241,9 @@ export default function AdminDashboard({ onLogout }) {
   });
 
   return (
-    <div className="bg-[#FAFAFA] text-[#171717] font-sans w-full min-h-screen p-4 md:p-8 selection:bg-[#C5A059] selection:text-white relative overflow-hidden">
+    <div className="bg-[#050505] text-white font-sans w-full min-h-screen p-4 sm:p-8 md:p-12 selection:bg-[#C5A059] selection:text-[#050505] relative overflow-hidden">
 
-      {/* 🔮 STYLES & LUXURY LIGHT THEME DEFINITIONS */}
+      {/* 🔮 STYLES & LUXURY DARK THEME DEFINITIONS */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -251,72 +251,81 @@ export default function AdminDashboard({ onLogout }) {
         .font-brand-sans { font-family: 'Inter', sans-serif; }
 
         .glass-admin-shell {
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(24px) saturate(180%);
-          border: 1px solid rgba(0, 0, 0, 0.05);
-          box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.1);
+          background: rgba(15, 15, 15, 0.6);
+          backdrop-filter: blur(40px) saturate(180%);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8);
         }
 
         .glass-admin-card {
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(12px);
         }
 
         .custom-admin-input {
-          background: #FAFAFA;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          color: #171717;
-          transition: all 0.25s ease;
+          background: rgba(0, 0, 0, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: #ffffff;
+          transition: all 0.3s ease;
         }
         .custom-admin-input:focus {
           border-color: #C5A059;
-          background: #ffffff;
-          box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+          background: rgba(10, 10, 10, 0.8);
+          box-shadow: 0 0 0 1px rgba(197, 160, 89, 0.2);
+        }
+        
+        /* Date picker icon inversion for dark mode */
+        .color-scheme-dark {
+          color-scheme: dark;
         }
       `}</style>
 
-      {/* Background Ambience */}
-      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-[#C5A059]/10 via-transparent to-transparent rounded-full blur-[130px] pointer-events-none" />
+      {/* Background Cinematic Texture & Glow */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-[#C5A059]/10 via-transparent to-transparent rounded-full blur-[130px]" />
+        <div className="absolute bottom-0 right-0 w-[80vw] h-[50vw] bg-[#C5A059]/5 blur-[150px] rounded-full translate-x-1/3 translate-y-1/3" />
+      </div>
 
-      <div className="max-w-7xl mx-auto glass-admin-shell rounded-3xl min-h-[88vh] overflow-hidden relative z-10 flex flex-col">
+      {/* Main Spanning Container instead of narrow boxed-in look */}
+      <div className="max-w-[100rem] mx-auto w-full glass-admin-shell rounded-[2rem] min-h-[88vh] overflow-hidden relative z-10 flex flex-col">
 
         {/* 👑 EXECUTIVE CONSOLE HEADER */}
-        <div className="bg-white/80 p-6 md:p-8 border-b border-gray-100 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6">
-          <div className="text-left space-y-1">
+        <div className="bg-[#0a0a0a]/80 p-8 md:p-10 border-b border-white/5 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6">
+          <div className="text-left space-y-1.5">
             <span className="text-[#C5A059] font-brand-sans text-[10px] tracking-[0.3em] uppercase block font-bold">
-              DIRECTORIAL EXECUTIVE SUITE • Vicky Photography Studio
+              Directorial Executive Suite • Vicky Studio
             </span>
-            <h2 className="font-brand-serif text-3xl md:text-4xl text-[#171717] tracking-tight font-bold">
-              Command <span className="italic text-[#C5A059] font-normal">Center.</span>
+            <h2 className="font-brand-serif text-3xl md:text-5xl text-white tracking-tight font-light">
+              Command <span className="italic text-gray-400">Center.</span>
             </h2>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full xl:w-auto">
-            <div className="flex bg-gray-50 p-1.5 rounded-xl border border-gray-200 w-full sm:w-auto overflow-x-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full xl:w-auto">
+            <div className="flex bg-[#111] p-1.5 rounded-xl border border-white/10 w-full sm:w-auto overflow-x-auto shadow-inner">
               <button
                 onClick={() => setActiveTab('crm')}
-                className={`whitespace-nowrap px-5 py-2 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'crm'
-                  ? 'bg-[#171717] text-white shadow-sm'
-                  : 'text-gray-500 hover:text-[#171717]'
+                className={`whitespace-nowrap px-6 py-2.5 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'crm'
+                  ? 'bg-[#C5A059] text-[#050505] shadow-lg'
+                  : 'text-gray-400 hover:text-white'
                   }`}
               >
                 📊 CRM & Accounts
               </button>
               <button
                 onClick={() => setActiveTab('inquiries')}
-                className={`whitespace-nowrap px-5 py-2 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'inquiries'
-                  ? 'bg-[#171717] text-white shadow-sm'
-                  : 'text-gray-500 hover:text-[#171717]'
+                className={`whitespace-nowrap px-6 py-2.5 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'inquiries'
+                  ? 'bg-[#C5A059] text-[#050505] shadow-lg'
+                  : 'text-gray-400 hover:text-white'
                   }`}
               >
                 ⚡ Live Inquiries
               </button>
               <button
                 onClick={() => setActiveTab('vault')}
-                className={`whitespace-nowrap px-5 py-2 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'vault'
-                  ? 'bg-[#171717] text-white shadow-sm'
-                  : 'text-gray-500 hover:text-[#171717]'
+                className={`whitespace-nowrap px-6 py-2.5 rounded-lg text-xs font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer ${activeTab === 'vault'
+                  ? 'bg-[#C5A059] text-[#050505] shadow-lg'
+                  : 'text-gray-400 hover:text-white'
                   }`}
               >
                 📂 Client Vaults
@@ -325,7 +334,7 @@ export default function AdminDashboard({ onLogout }) {
 
             <button
               onClick={onLogout}
-              className="w-full sm:w-auto text-xs uppercase font-brand-sans font-bold tracking-widest bg-red-50 border border-red-200 text-red-700 px-6 py-2.5 rounded-xl hover:bg-red-100 transition-all cursor-pointer whitespace-nowrap shadow-sm"
+              className="w-full sm:w-auto text-xs uppercase font-brand-sans font-bold tracking-widest bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-3 rounded-xl hover:bg-red-500/20 hover:text-red-300 transition-all cursor-pointer whitespace-nowrap"
             >
               Exit Console
             </button>
@@ -336,29 +345,29 @@ export default function AdminDashboard({ onLogout }) {
             TAB 1: CRM & ACCOUNTS
         ========================================================= */}
         {activeTab === 'crm' && (
-          <div className="p-6 md:p-8 flex-1 flex flex-col space-y-6">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="p-8 md:p-10 flex-1 flex flex-col space-y-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div className="text-left">
-                <span className="font-brand-sans text-[10px] font-bold text-gray-400 tracking-widest uppercase block">Ledger Records</span>
-                <h3 className="font-brand-serif text-2xl font-bold text-[#171717]">Client Financial Master</h3>
+                <span className="font-brand-sans text-[10px] font-bold text-gray-500 tracking-widest uppercase block mb-1">Ledger Records</span>
+                <h3 className="font-brand-serif text-3xl font-light text-white">Client Financial Master</h3>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto items-center">
+              <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto items-center">
                 <div className="relative w-full sm:w-auto">
                   <input
                     type="text"
                     placeholder="Search client records..."
                     value={crmSearch}
                     onChange={(e) => setCrmSearch(e.target.value)}
-                    className="w-full sm:w-64 custom-admin-input rounded-xl py-2 pl-9 pr-3 text-xs outline-none"
+                    className="w-full sm:w-72 custom-admin-input rounded-xl py-3 pl-10 pr-4 text-xs outline-none placeholder-gray-500"
                   />
-                  <svg className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <svg className="w-4 h-4 text-gray-500 absolute left-4 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
 
                 <select
                   value={crmFilter}
                   onChange={(e) => setCrmFilter(e.target.value)}
-                  className="w-full sm:w-auto custom-admin-input rounded-xl p-2 text-[10px] font-brand-sans font-bold uppercase tracking-widest outline-none cursor-pointer"
+                  className="w-full sm:w-auto custom-admin-input bg-[#111] rounded-xl p-3 text-[10px] font-brand-sans font-bold uppercase tracking-widest outline-none cursor-pointer"
                 >
                   <option value="All">All Clients</option>
                   <option value="Hot Lead">🔥 Hot Leads</option>
@@ -369,92 +378,96 @@ export default function AdminDashboard({ onLogout }) {
 
                 <button
                   onClick={() => setShowCrmModal(true)}
-                  className="w-full sm:w-auto bg-[#171717] hover:bg-[#C5A059] text-white px-5 py-2.5 rounded-xl text-[10px] font-brand-sans font-bold uppercase tracking-widest transition-all shadow-sm cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto bg-[#C5A059] hover:bg-white text-[#050505] px-6 py-3 rounded-xl text-[10px] font-brand-sans font-bold uppercase tracking-widest transition-all cursor-pointer whitespace-nowrap shadow-[0_0_15px_rgba(197,160,89,0.2)]"
                 >
                   + Offline Client
                 </button>
               </div>
             </div>
 
-            <div className="flex-1 overflow-auto pr-1">
+            <div className="flex-1 overflow-auto pr-2 no-scrollbar">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredCrmClients.map(client => {
                   const total = client.totalAmount || 0;
                   const paid = client.paidAmount || 0;
                   const percent = total > 0 ? Math.min(Math.round((paid / total) * 100), 100) : 0;
                   const cStatus = crewStatuses[client._id] || 'Pending';
+                  
+                  // Dark mode optimized status colors
                   const cColor = cStatus === 'Editing Done'
-                    ? 'text-green-700 border-green-200 bg-green-50'
+                    ? 'text-green-400 border-green-500/30 bg-green-500/10'
                     : cStatus === 'Downloaded'
-                      ? 'text-blue-700 border-blue-200 bg-blue-50'
-                      : 'text-gray-600 border-gray-200 bg-gray-50';
+                      ? 'text-blue-400 border-blue-500/30 bg-blue-500/10'
+                      : 'text-gray-400 border-white/10 bg-white/5';
 
                   return (
-                    <div key={client._id} className="glass-admin-card rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-md hover:border-[#C5A059]/40 relative group text-left">
+                    <div key={client._id} className="glass-admin-card rounded-2xl p-7 transition-all duration-300 flex flex-col justify-between hover:border-[#C5A059]/40 relative group text-left">
 
                       <button
                         onClick={() => handleDeleteClient(client._id, client.name, client.isOffline)}
-                        className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-red-600 hover:bg-red-50 p-1.5 rounded-lg cursor-pointer"
+                        className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity text-red-400 hover:bg-red-500/10 border border-transparent hover:border-red-500/20 p-2 rounded-lg cursor-pointer"
                         title="Delete Client"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                       </button>
 
-                      <div className="mb-4">
-                        <h4 className="font-brand-serif text-xl font-bold text-[#171717] pr-8 truncate">{client.name}</h4>
-                        <div className="flex gap-2 mt-1">
-                          <span className="text-[9px] font-brand-sans font-bold text-gray-500 uppercase tracking-widest bg-gray-50 px-2.5 py-0.5 rounded-full border border-gray-200">{client.eventType}</span>
-                          {client.isOffline && <span className="text-[9px] font-brand-sans font-bold text-purple-700 uppercase tracking-widest bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">Offline Walkin</span>}
+                      <div className="mb-6">
+                        <h4 className="font-brand-serif text-2xl font-light text-white pr-10 truncate">{client.name}</h4>
+                        <div className="flex gap-2 mt-2">
+                          <span className="text-[9px] font-brand-sans font-bold text-gray-300 uppercase tracking-widest bg-white/5 px-2.5 py-1 rounded-full border border-white/10">{client.eventType}</span>
+                          {client.isOffline && <span className="text-[9px] font-brand-sans font-bold text-purple-300 uppercase tracking-widest bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20">Offline Walkin</span>}
                         </div>
                       </div>
 
-                      <div className="space-y-3.5 bg-gray-50/80 p-4 rounded-xl border border-gray-100">
+                      <div className="space-y-4 bg-black/40 p-5 rounded-xl border border-white/5">
                         <div className="flex justify-between items-center">
-                          <span className="text-[9px] uppercase font-bold text-gray-400 tracking-widest">Total Deal (₹)</span>
+                          <span className="text-[9px] uppercase font-bold text-gray-500 tracking-widest">Total Deal (₹)</span>
                           <input
                             type="number"
                             value={total || ''}
                             onChange={(e) => updatePayment(client._id, 'totalAmount', e.target.value)}
                             placeholder="0"
-                            className="bg-transparent border-b border-gray-300 focus:border-[#171717] text-right text-[#171717] font-brand-sans text-sm font-bold w-28 outline-none"
+                            className="bg-transparent border-b border-white/10 focus:border-[#C5A059] text-right text-white font-brand-sans text-sm font-bold w-28 outline-none transition-colors"
                           />
                         </div>
 
                         <div className="flex justify-between items-center">
-                          <span className="text-[9px] uppercase font-bold text-gray-400 tracking-widest">Received (₹)</span>
+                          <span className="text-[9px] uppercase font-bold text-gray-500 tracking-widest">Received (₹)</span>
                           <input
                             type="number"
                             value={paid || ''}
                             onChange={(e) => updatePayment(client._id, 'paidAmount', e.target.value)}
                             placeholder="0"
-                            className="bg-transparent border-b border-gray-300 focus:border-green-600 text-right text-green-700 font-brand-sans text-sm font-bold w-28 outline-none"
+                            className="bg-transparent border-b border-white/10 focus:border-green-400 text-right text-green-400 font-brand-sans text-sm font-bold w-28 outline-none transition-colors"
                           />
                         </div>
 
-                        <div>
-                          <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden mt-1">
-                            <div className={`h-1.5 rounded-full transition-all duration-700 ${percent === 100 ? 'bg-green-500' : 'bg-[#C5A059]'}`} style={{ width: `${percent}%` }}></div>
+                        <div className="pt-2">
+                          <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                            <div className={`h-1.5 rounded-full transition-all duration-700 ${percent === 100 ? 'bg-green-400' : 'bg-[#C5A059]'}`} style={{ width: `${percent}%` }}></div>
                           </div>
-                          <div className="flex justify-between text-[9px] font-brand-sans font-bold mt-1.5 uppercase tracking-widest">
+                          <div className="flex justify-between text-[9px] font-brand-sans font-bold mt-2 uppercase tracking-widest">
                             <span className="text-gray-400">Pending: ₹{Math.max(total - paid, 0).toLocaleString()}</span>
-                            <span className={percent === 100 ? 'text-green-600' : 'text-gray-500'}>{percent}% Settled</span>
+                            <span className={percent === 100 ? 'text-green-400' : 'text-[#C5A059]'}>{percent}% Settled</span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="mt-4 flex justify-between items-center border-t border-gray-100 pt-3">
-                        <span className={`text-[9px] font-brand-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${client.financialStatus === 'Full Payment' ? 'bg-green-50 text-green-700 border border-green-200' :
-                          client.financialStatus === 'Advance Received' ? 'bg-[#C5A059]/10 text-[#C5A059] border border-[#C5A059]/20' : 'bg-gray-50 text-gray-500 border border-gray-200'
+                      <div className="mt-5 flex justify-between items-center border-t border-white/10 pt-4">
+                        <span className={`text-[9px] font-brand-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${
+                          client.financialStatus === 'Full Payment' ? 'bg-green-500/10 text-green-400 border border-green-500/30' :
+                          client.financialStatus === 'Advance Received' ? 'bg-[#C5A059]/10 text-[#C5A059] border border-[#C5A059]/30' : 
+                          'bg-white/5 text-gray-400 border border-white/10'
                           }`}>
                           {client.financialStatus || 'Lead'}
                         </span>
 
                         {!client.isOffline ? (
-                          <div className={`text-[9px] font-brand-sans font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border ${cColor}`}>
+                          <div className={`text-[9px] font-brand-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border ${cColor}`}>
                             Crew: {cStatus}
                           </div>
                         ) : (
-                          <span className="text-[9px] font-brand-sans font-bold text-gray-400 uppercase tracking-widest">Offline Client</span>
+                          <span className="text-[9px] font-brand-sans font-bold text-gray-500 uppercase tracking-widest">Offline Client</span>
                         )}
                       </div>
 
@@ -468,74 +481,74 @@ export default function AdminDashboard({ onLogout }) {
 
         {/* 🤵 MODAL: ADD OFFLINE CLIENT */}
         {showCrmModal && (
-          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 max-w-md w-full shadow-2xl relative text-left">
-              <span className="text-[9px] font-brand-sans uppercase tracking-widest text-gray-400 font-bold block mb-1">Direct Studio Walkin</span>
-              <h3 className="font-brand-serif text-2xl text-[#171717] font-bold mb-5">Create Offline Client</h3>
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 max-w-md w-full shadow-2xl relative text-left">
+              <span className="text-[9px] font-brand-sans uppercase tracking-widest text-[#C5A059] font-bold block mb-2">Direct Studio Walkin</span>
+              <h3 className="font-brand-serif text-3xl text-white font-light mb-8">Create Offline Client</h3>
 
-              <form onSubmit={handleSaveOfflineClient} className="space-y-4 font-brand-sans text-xs">
+              <form onSubmit={handleSaveOfflineClient} className="space-y-5 font-brand-sans text-xs">
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Client / Couple Name</label>
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Client / Couple Name</label>
                   <input
                     type="text"
                     required
                     value={offlineClient.name}
                     onChange={e => setOfflineClient({ ...offlineClient, name: e.target.value })}
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none"
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none"
                     placeholder="e.g. Vikas & Family"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Event Scope</label>
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Event Scope</label>
                   <select
                     value={offlineClient.eventType}
                     onChange={e => setOfflineClient({ ...offlineClient, eventType: e.target.value })}
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none cursor-pointer"
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none cursor-pointer"
                   >
-                    <option value="Wedding">Wedding</option>
-                    <option value="Pre-Wedding">Pre-Wedding</option>
-                    <option value="Engagement">Engagement</option>
-                    <option value="Birthday">Birthday / Other</option>
+                    <option value="Wedding" className="bg-[#111]">Wedding</option>
+                    <option value="Pre-Wedding" className="bg-[#111]">Pre-Wedding</option>
+                    <option value="Engagement" className="bg-[#111]">Engagement</option>
+                    <option value="Birthday" className="bg-[#111]">Birthday / Other</option>
                   </select>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Total Deal (₹)</label>
+                    <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Total Deal (₹)</label>
                     <input
                       type="number"
                       required
                       value={offlineClient.totalAmount}
                       onChange={e => setOfflineClient({ ...offlineClient, totalAmount: e.target.value })}
-                      className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] font-bold outline-none"
+                      className="w-full custom-admin-input rounded-xl px-4 py-3 font-bold outline-none"
                       placeholder="0"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Advance (₹)</label>
+                    <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Advance (₹)</label>
                     <input
                       type="number"
                       required
                       value={offlineClient.paidAmount}
                       onChange={e => setOfflineClient({ ...offlineClient, paidAmount: e.target.value })}
-                      className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-green-700 font-bold outline-none"
+                      className="w-full custom-admin-input rounded-xl px-4 py-3 text-green-400 font-bold outline-none"
                       placeholder="0"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-3 pt-3">
+                <div className="flex gap-3 pt-5">
                   <button
                     type="button"
                     onClick={() => setShowCrmModal(false)}
-                    className="flex-1 bg-gray-100 text-gray-600 font-bold uppercase tracking-widest text-[10px] py-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer"
+                    className="flex-1 bg-white/5 text-gray-400 font-bold uppercase tracking-widest text-[10px] py-4 rounded-xl hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 bg-[#171717] hover:bg-[#C5A059] text-white font-bold uppercase tracking-widest text-[10px] py-3 rounded-xl transition-colors cursor-pointer"
+                    className="flex-1 bg-[#C5A059] hover:bg-white text-[#050505] font-bold uppercase tracking-widest text-[10px] py-4 rounded-xl transition-colors cursor-pointer shadow-lg"
                   >
                     Save Record
                   </button>
@@ -549,42 +562,44 @@ export default function AdminDashboard({ onLogout }) {
             TAB 2: LIVE INQUIRIES
         ========================================================= */}
         {activeTab === 'inquiries' && (
-          <div className="p-6 md:p-8 flex-1 flex flex-col space-y-6">
+          <div className="p-8 md:p-10 flex-1 flex flex-col space-y-8">
             <div className="text-left">
-              <span className="font-brand-sans text-[10px] font-bold text-gray-400 tracking-widest uppercase block">Pipeline Monitor</span>
-              <h3 className="font-brand-serif text-2xl font-bold text-[#171717]">Live Booking Requests</h3>
+              <span className="font-brand-sans text-[10px] font-bold text-gray-500 tracking-widest uppercase block mb-1">Pipeline Monitor</span>
+              <h3 className="font-brand-serif text-3xl font-light text-white">Live Booking Requests</h3>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-black/40 border border-white/5 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-md">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse min-w-[800px]">
                   <thead>
-                    <tr className="bg-gray-50 border-b border-gray-200 text-[9px] uppercase tracking-widest text-gray-500 font-brand-sans font-bold">
-                      <th className="p-4">Client Lead</th>
-                      <th className="p-4">Event Date</th>
-                      <th className="p-4">Service Requested</th>
-                      <th className="p-4">Contact Details</th>
-                      <th className="p-4 text-center">Operation Status</th>
+                    <tr className="bg-white/[0.03] border-b border-white/10 text-[9px] uppercase tracking-widest text-gray-400 font-brand-sans font-bold">
+                      <th className="p-5">Client Lead</th>
+                      <th className="p-5">Event Date</th>
+                      <th className="p-5">Service Requested</th>
+                      <th className="p-5">Contact Details</th>
+                      <th className="p-5 text-center">Operation Status</th>
                     </tr>
                   </thead>
-                  <tbody className="text-xs font-brand-sans">
+                  <tbody className="text-sm font-brand-sans">
                     {bookings.map((lead) => (
-                      <tr key={lead._id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                        <td className="p-4 font-brand-serif text-[#171717] font-bold text-sm">{lead.name}</td>
-                        <td className="p-4 font-bold text-[#C5A059]">{new Date(lead.eventDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</td>
-                        <td className="p-4 text-gray-600 font-medium">{lead.serviceType}</td>
-                        <td className="p-4 text-[#171717] font-bold">{lead.phone}</td>
-                        <td className="p-4 text-center">
+                      <tr key={lead._id} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors text-gray-300">
+                        <td className="p-5 font-brand-serif text-white font-light text-lg">{lead.name}</td>
+                        <td className="p-5 font-bold text-[#C5A059] text-xs uppercase tracking-wider">{new Date(lead.eventDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</td>
+                        <td className="p-5 text-gray-400">{lead.serviceType}</td>
+                        <td className="p-5 font-mono text-xs">{lead.phone}</td>
+                        <td className="p-5 text-center">
                           <select
                             value={lead.status}
                             onChange={(e) => handleUpdateLeadStatus(lead._id, e.target.value)}
-                            className={`px-3 py-1.5 rounded-full text-[9px] font-brand-sans font-bold uppercase tracking-widest outline-none border cursor-pointer ${lead.status === 'New Lead' ? 'bg-red-50 text-red-700 border-red-200' :
-                              lead.status === 'Deal Closed' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-gray-50 text-gray-700 border-gray-200'
-                              }`}
+                            className={`px-4 py-2 rounded-full text-[9px] font-brand-sans font-bold uppercase tracking-widest outline-none border cursor-pointer ${
+                              lead.status === 'New Lead' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+                              lead.status === 'Deal Closed' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 
+                              'bg-white/5 text-gray-300 border-white/10'
+                            }`}
                           >
-                            <option value="New Lead">🔴 NEW LEAD</option>
-                            <option value="Contacted">🔵 CONTACTED</option>
-                            <option value="Deal Closed">🟢 DEAL CLOSED</option>
+                            <option value="New Lead" className="bg-[#111]">🔴 NEW LEAD</option>
+                            <option value="Contacted" className="bg-[#111]">🔵 CONTACTED</option>
+                            <option value="Deal Closed" className="bg-[#111]">🟢 DEAL CLOSED</option>
                           </select>
                         </td>
                       </tr>
@@ -600,24 +615,24 @@ export default function AdminDashboard({ onLogout }) {
             TAB 3: CLIENT VAULTS
         ========================================================= */}
         {activeTab === 'vault' && (
-          <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 flex-1">
+          <div className="p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 flex-1">
 
             {/* Left: Deployment Form */}
-            <div className="lg:col-span-4 glass-admin-card p-6 md:p-8 rounded-3xl h-fit text-left space-y-5">
+            <div className="lg:col-span-4 glass-admin-card p-8 md:p-10 rounded-[2rem] h-fit text-left space-y-6">
               <div>
-                <span className="text-[9px] font-brand-sans text-gray-400 uppercase tracking-widest font-bold block mb-1">Secure Vault Manager</span>
-                <h3 className="text-[#171717] text-xl font-brand-serif font-bold">
-                  {isEditing ? 'Update Vault Settings' : 'Deploy Client Vault'}
+                <span className="text-[10px] font-brand-sans text-[#C5A059] uppercase tracking-widest font-bold block mb-1">Secure Vault Manager</span>
+                <h3 className="text-white text-3xl font-brand-serif font-light">
+                  {isEditing ? 'Update Vault' : 'Deploy Portal'}
                 </h3>
               </div>
 
-              <form onSubmit={handleSaveVault} className="space-y-4 font-brand-sans text-xs">
+              <form onSubmit={handleSaveVault} className="space-y-5 font-brand-sans text-xs pt-2">
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Client / Couple Name</label>
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Client / Couple Name</label>
                   <input
                     type="text"
                     required
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none"
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none"
                     placeholder="e.g. Rahul & Sneha"
                     value={newClient.name}
                     onChange={(e) => setNewClient({ ...newClient, name: e.target.value })}
@@ -625,67 +640,68 @@ export default function AdminDashboard({ onLogout }) {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Event Scope</label>
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Event Scope</label>
                   <select
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none cursor-pointer"
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none cursor-pointer"
                     value={newClient.eventType}
                     onChange={(e) => setNewClient({ ...newClient, eventType: e.target.value })}
                   >
-                    <option value="Wedding">Wedding</option>
-                    <option value="Pre-Wedding">Pre-Wedding</option>
-                    <option value="Engagement">Engagement</option>
+                    <option value="Wedding" className="bg-[#111]">Wedding</option>
+                    <option value="Pre-Wedding" className="bg-[#111]">Pre-Wedding</option>
+                    <option value="Engagement" className="bg-[#111]">Engagement</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Master Drive Folder Link</label>
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Master Drive Folder Link</label>
                   <input
                     type="url"
                     required
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none"
-                    placeholder="Paste Google Drive folder URL..."
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none"
+                    placeholder="Paste Google Drive URL..."
                     value={newClient.driveLink}
                     onChange={(e) => setNewClient({ ...newClient, driveLink: e.target.value })}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] text-[#C5A059] font-bold uppercase tracking-widest mb-1">Photo Selection Deadline</label>
+                  <label className="block text-[10px] text-[#C5A059] font-bold uppercase tracking-widest mb-1.5">Selection Deadline</label>
                   <input
                     type="date"
                     required
-                    className="w-full custom-admin-input rounded-xl px-4 py-2.5 text-[#171717] outline-none cursor-pointer font-bold"
+                    className="w-full custom-admin-input rounded-xl px-4 py-3 outline-none cursor-pointer font-bold color-scheme-dark text-gray-300"
                     value={newClient.deadlineDate}
                     onChange={(e) => setNewClient({ ...newClient, deadlineDate: e.target.value })}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Security PIN (4 Digits)</label>
-                  <div className="flex gap-2">
+                  <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5">Security PIN (4 Digits)</label>
+                  <div className="flex gap-3">
                     <input
                       type="text"
                       readOnly
                       required
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-[#171717] font-brand-sans text-lg font-bold text-center tracking-[0.5em] outline-none"
+                      className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-[#C5A059] font-brand-sans text-xl font-bold text-center tracking-[0.5em] outline-none shadow-inner"
                       placeholder="----"
                       value={newClient.pin}
                     />
                     <button
                       type="button"
                       onClick={() => setNewClient({ ...newClient, pin: Math.floor(1000 + Math.random() * 9000).toString() })}
-                      className="bg-gray-100 hover:bg-[#171717] text-gray-600 hover:text-white px-4 rounded-xl text-[9px] font-brand-sans font-bold uppercase tracking-widest cursor-pointer transition-all"
+                      className="bg-white/10 hover:bg-[#C5A059] text-white hover:text-black px-5 rounded-xl text-[9px] font-brand-sans font-bold uppercase tracking-widest cursor-pointer transition-all shadow-sm"
                     >
                       Generate
                     </button>
                   </div>
                 </div>
 
-                <div className="flex gap-2 pt-2">
+                <div className="flex gap-3 pt-4">
                   <button
                     type="submit"
-                    className={`flex-1 font-bold uppercase tracking-widest py-3 rounded-xl transition-all shadow-sm text-[10px] text-white cursor-pointer ${isEditing ? 'bg-blue-600 hover:bg-blue-700' : 'bg-[#171717] hover:bg-[#C5A059]'
-                      }`}
+                    className={`flex-1 font-bold uppercase tracking-widest py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(197,160,89,0.15)] text-[10px] cursor-pointer ${
+                      isEditing ? 'bg-blue-600 text-white hover:bg-blue-500' : 'bg-[#C5A059] text-[#050505] hover:bg-white'
+                    }`}
                   >
                     {isEditing ? 'Update Details' : 'Deploy Portal ✦'}
                   </button>
@@ -693,7 +709,7 @@ export default function AdminDashboard({ onLogout }) {
                     <button
                       type="button"
                       onClick={() => { setIsEditing(false); setNewClient({ name: '', eventType: 'Wedding', driveLink: '', pin: '', deadlineDate: '' }); setEditClientId(null); }}
-                      className="px-4 bg-gray-100 border border-gray-200 rounded-xl text-gray-600 text-[10px] uppercase font-bold hover:bg-gray-200 cursor-pointer"
+                      className="px-6 bg-white/5 border border-white/10 rounded-xl text-gray-400 text-[10px] uppercase font-bold hover:bg-white/10 hover:text-white cursor-pointer transition-colors"
                     >
                       Cancel
                     </button>
@@ -703,60 +719,62 @@ export default function AdminDashboard({ onLogout }) {
             </div>
 
             {/* Right: Active Portals Grid */}
-            <div className="lg:col-span-8 glass-admin-card rounded-3xl p-6 md:p-8 flex flex-col text-left space-y-6">
-              <div className="border-b border-gray-100 pb-4 flex justify-between items-end">
+            <div className="lg:col-span-8 glass-admin-card rounded-[2rem] p-8 md:p-10 flex flex-col text-left space-y-8">
+              <div className="border-b border-white/10 pb-5 flex justify-between items-end">
                 <div>
-                  <span className="text-[10px] font-brand-sans text-gray-400 uppercase tracking-widest font-bold block mb-1">Live Assets</span>
-                  <h3 className="text-[#171717] text-2xl font-brand-serif font-bold">Active Cloud Portals</h3>
+                  <span className="text-[10px] font-brand-sans text-gray-500 uppercase tracking-widest font-bold block mb-1">Live Assets</span>
+                  <h3 className="text-white text-3xl font-brand-serif font-light">Active Cloud Portals</h3>
                 </div>
-                <span className="text-[10px] font-brand-sans uppercase tracking-widest font-bold text-[#C5A059]">{clients.filter(c => !c.isOffline).length} Portals Deployed</span>
+                <span className="text-[10px] font-brand-sans uppercase tracking-widest font-bold text-[#C5A059] px-3 py-1 bg-[#C5A059]/10 rounded-full border border-[#C5A059]/20">
+                  {clients.filter(c => !c.isOffline).length} Deployed
+                </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 overflow-auto pr-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 overflow-auto pr-2 no-scrollbar">
                 {clients.filter(c => !c.isOffline).map(client => (
-                  <div key={client._id} className="bg-white border border-gray-200 hover:border-[#C5A059]/40 rounded-2xl p-5 transition-all group relative flex flex-col justify-between shadow-sm">
+                  <div key={client._id} className="bg-black/40 border border-white/10 hover:border-[#C5A059]/50 rounded-2xl p-6 transition-all group relative flex flex-col justify-between shadow-lg backdrop-blur-sm">
 
-                    <div className="absolute top-4 right-4 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute top-5 right-5 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         onClick={() => handleEditClick(client)}
-                        className="bg-gray-50 border border-gray-200 text-blue-600 hover:bg-blue-50 p-1.5 rounded-lg shadow-sm cursor-pointer"
+                        className="bg-white/5 border border-white/10 text-blue-400 hover:bg-blue-500/20 p-2 rounded-xl shadow-sm cursor-pointer transition-colors"
                         title="Edit Vault Settings"
                       >
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                       </button>
                       <button
                         onClick={() => handleDeleteClient(client._id, client.name, false)}
-                        className="bg-gray-50 border border-gray-200 text-red-600 hover:bg-red-50 p-1.5 rounded-lg shadow-sm cursor-pointer"
+                        className="bg-white/5 border border-white/10 text-red-400 hover:bg-red-500/20 p-2 rounded-xl shadow-sm cursor-pointer transition-colors"
                         title="Delete Vault"
                       >
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                       </button>
                     </div>
 
-                    <div className="mb-4">
-                      <h4 className="text-[#171717] font-brand-serif text-lg font-bold pr-14 truncate">{client.name}</h4>
-                      <div className="flex gap-2 items-center flex-wrap mt-1">
-                        <span className="text-[9px] font-brand-sans font-bold text-gray-500 uppercase tracking-widest bg-gray-50 px-2 py-0.5 rounded-full border border-gray-200">{client.eventType}</span>
-                        {crewStatuses[client._id] && <span className="text-[9px] font-brand-sans font-bold text-blue-700 border border-blue-200 bg-blue-50 px-2 py-0.5 rounded-full uppercase">{crewStatuses[client._id]}</span>}
+                    <div className="mb-5">
+                      <h4 className="text-white font-brand-serif text-2xl font-light pr-20 truncate">{client.name}</h4>
+                      <div className="flex gap-2 items-center flex-wrap mt-2">
+                        <span className="text-[9px] font-brand-sans font-bold text-gray-300 uppercase tracking-widest bg-white/5 px-2.5 py-1 rounded-full border border-white/10">{client.eventType}</span>
+                        {crewStatuses[client._id] && <span className="text-[9px] font-brand-sans font-bold text-blue-300 border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 rounded-full uppercase tracking-wider">{crewStatuses[client._id]}</span>}
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-100 rounded-xl p-3.5 mb-4 flex items-center justify-between shadow-inner">
+                    <div className="bg-white/5 border border-white/5 rounded-xl p-4 mb-5 flex items-center justify-between shadow-inner">
                       <div>
-                        <span className="block text-[8px] text-gray-400 uppercase font-bold tracking-widest mb-1">Selection Target</span>
-                        <span className="text-[#171717] font-brand-sans text-xs font-bold">{client.deadlineDate ? new Date(client.deadlineDate).toLocaleDateString('en-GB') : 'Not Set'}</span>
+                        <span className="block text-[8px] text-gray-500 uppercase font-bold tracking-widest mb-1">Selection Target</span>
+                        <span className="text-gray-200 font-brand-sans text-xs font-bold tracking-wider">{client.deadlineDate ? new Date(client.deadlineDate).toLocaleDateString('en-GB') : 'Not Set'}</span>
                       </div>
-                      <div className="text-[#C5A059]">⏳</div>
+                      <div className="text-[#C5A059] opacity-80">⏳</div>
                     </div>
 
-                    <div className="flex justify-between items-end border-t border-gray-100 pt-3 mt-auto">
+                    <div className="flex justify-between items-end border-t border-white/5 pt-4 mt-auto">
                       <div>
-                        <p className="text-[8.5px] text-gray-400 uppercase tracking-widest mb-1 font-bold">Access PIN</p>
-                        <p className="text-[#171717] font-brand-sans font-bold tracking-[0.2em] text-lg leading-none">{client.pin}</p>
+                        <p className="text-[8.5px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold">Access PIN</p>
+                        <p className="text-white font-brand-sans font-bold tracking-[0.3em] text-xl leading-none">{client.pin}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-[8.5px] text-gray-400 uppercase tracking-widest mb-1 font-bold">Photos Selected</p>
-                        <p className="text-[#C5A059] font-brand-sans font-bold text-xl leading-none">{client.selectedPhotosCount || 0}</p>
+                        <p className="text-[8.5px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold">Photos Selected</p>
+                        <p className="text-[#C5A059] font-brand-serif font-bold text-2xl leading-none">{client.selectedPhotosCount || 0}</p>
                       </div>
                     </div>
 

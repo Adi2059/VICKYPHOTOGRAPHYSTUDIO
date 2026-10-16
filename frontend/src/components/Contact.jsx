@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 // 🎨 Custom Instagram SVG Icon (100% Error-Free)
@@ -23,6 +23,66 @@ const InstagramIcon = ({ size = 20, className = "" }) => (
 
 export default function ContactPage() {
   
+  // ==========================================
+  // 🚀 FORM STATE & API LOGIC
+  // ==========================================
+  const [formData, setFormData] = useState({
+    name: '',
+    partnerName: '',
+    email: '',
+    phone: '',
+    eventDate: '',
+    venue: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('idle'); // idle, submitting, success, error
+
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5100';
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    // Naye luxury form ka data tere existing backend ke format mein map kar rahe hain
+    const payload = {
+      name: formData.partnerName ? `${formData.name} & ${formData.partnerName}` : formData.name,
+      phone: formData.phone,
+      address: formData.venue || 'Venue Not Decided',
+      eventDate: formData.eventDate,
+      serviceType: 'Cinematic Shoot', // Defaulting since no dropdown is in the new UI
+      message: `Email: ${formData.email}\n\nClient Vision:\n${formData.message}`
+    };
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/contact/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', partnerName: '', email: '', phone: '', eventDate: '', venue: '', message: '' });
+        
+        // Reset success state back to normal after 4 seconds
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch (error) {
+      console.error('Contact Form Error:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
+  };
+
   // Auto-scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -143,25 +203,25 @@ export default function ContactPage() {
               
               <h3 className="font-luxury-serif text-3xl lg:text-4xl font-light mb-12 text-white">Send an Inquiry</h3>
               
-              <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-12" onSubmit={handleSubmit}>
                 
                 {/* Row 1 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                   <div className="relative group">
-                    <input type="text" required placeholder="Your Name *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
+                    <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="Your Name *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
                   </div>
                   <div className="relative group">
-                    <input type="text" placeholder="Partner's Name" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
+                    <input type="text" name="partnerName" value={formData.partnerName} onChange={handleChange} placeholder="Partner's Name" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
                   </div>
                 </div>
                 
                 {/* Row 2 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                   <div className="relative group">
-                    <input type="email" required placeholder="Email Address *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="Email Address *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
                   </div>
                   <div className="relative group">
-                    <input type="tel" required placeholder="Phone Number *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
+                    <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="Phone Number *" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
                   </div>
                 </div>
 
@@ -169,22 +229,36 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                   <div className="relative group">
                     <label className="absolute -top-5 text-[9px] uppercase tracking-widest text-gray-500">Event Date</label>
-                    <input type="date" className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 text-sm font-luxury-sans text-gray-300 focus:outline-none focus:border-[#C5A059] transition-colors color-scheme-dark" />
+                    <input type="date" name="eventDate" required value={formData.eventDate} onChange={handleChange} className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 text-sm font-luxury-sans text-gray-300 focus:outline-none focus:border-[#C5A059] transition-colors color-scheme-dark" />
                   </div>
                   <div className="relative group">
-                    <input type="text" placeholder="Event Venue / City" className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
+                    <input type="text" name="venue" required value={formData.venue} onChange={handleChange} placeholder="Event Venue / City" className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors" />
                   </div>
                 </div>
 
                 {/* Row 4 */}
                 <div className="relative group">
-                  <textarea rows="4" placeholder="Tell us about your grand vision... What are you planning?" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors resize-none"></textarea>
+                  <textarea rows="4" name="message" required value={formData.message} onChange={handleChange} placeholder="Tell us about your grand vision... What are you planning?" className="w-full bg-transparent border-b border-white/20 pb-4 text-sm font-luxury-sans text-white placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors resize-none"></textarea>
                 </div>
 
-                {/* Submit Button */}
-                <button className="w-full flex items-center justify-center gap-4 bg-[#C5A059] text-white hover:bg-white hover:text-black py-5 mt-4 transition-all duration-500 group font-luxury-sans text-[10px] uppercase tracking-[0.2em] font-medium shadow-[0_0_20px_rgba(197,160,89,0.2)]">
-                  Submit Inquiry
-                  <ArrowRight size={16} className="transform group-hover:translate-x-2 transition-transform" />
+                {/* Submit Button with Dynamic Status UI */}
+                <button 
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  className={`w-full flex items-center justify-center gap-4 py-5 mt-4 transition-all duration-500 group font-luxury-sans text-[10px] uppercase tracking-[0.2em] font-medium shadow-[0_0_20px_rgba(197,160,89,0.2)] ${
+                    status === 'success' ? 'bg-green-600/90 text-white border border-green-500' :
+                    status === 'error' ? 'bg-red-600/90 text-white border border-red-500' :
+                    'bg-[#C5A059] text-white hover:bg-white hover:text-black'
+                  }`}
+                >
+                  {status === 'submitting' ? 'Transmitting Data...' : 
+                   status === 'success' ? 'Inquiry Secured ✦' : 
+                   status === 'error' ? 'Transmission Failed' : 
+                   'Submit Inquiry'}
+                  
+                  {status === 'idle' && (
+                    <ArrowRight size={16} className="transform group-hover:translate-x-2 transition-transform" />
+                  )}
                 </button>
               </form>
 

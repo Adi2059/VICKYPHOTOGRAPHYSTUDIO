@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-// 🚀 ADDED prop: 'openLoginModal' so it can trigger the login popup from App.jsx
-export default function Footer({ openLoginModal }) {
+export default function Footer({ openLoginModal, openCrewWorkspace }) { // 🚀 ADDED 'openCrewWorkspace'
   const canvasRef = useRef(null);
   const footerRef = useRef(null);
   const points = useRef([]);
@@ -129,7 +128,6 @@ export default function Footer({ openLoginModal }) {
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start gap-2">
           
           <div className="flex items-center gap-3 opacity-30 hover:opacity-100 transition-opacity duration-500 relative z-20">
-            {/* 🚀 FIXED: Swapped window.location with openLoginModal function call */}
             <button 
               onClick={() => openLoginModal && openLoginModal()} 
               className="hover:text-[#C5A059] transition-colors cursor-pointer"
@@ -137,8 +135,9 @@ export default function Footer({ openLoginModal }) {
               System Admin
             </button>
             <span>•</span>
+            {/* 🚀 FIXED: Ab yahan se Crew ka lock seedha bypass hokar open hoga */}
             <button 
-              onClick={() => openLoginModal && openLoginModal()} 
+              onClick={() => openCrewWorkspace && openCrewWorkspace()} 
               className="hover:text-[#C5A059] transition-colors cursor-pointer"
             >
               Crew Console

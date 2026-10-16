@@ -43,7 +43,7 @@ app.use(express.json());
 // 🗄️ DATABASE CONNECTION (MongoDB Local/Cloud)
 // ==========================================
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/guru_videography')
-  .then(() => console.log('🟢 MongoDB Database Connected: Guru Videography!'))
+  .then(() => console.log('🟢 MongoDB Database Connected: Vicky photography!'))
   .catch((err) => console.log('🔴 MongoDB Connection Error:', err));
 
 
